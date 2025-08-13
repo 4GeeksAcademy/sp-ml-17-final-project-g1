@@ -9,9 +9,9 @@ We will have to find a suitable dataset to work with, process it, train a model 
 ## 👥  Credits
 
 **Team Members:**
-> - Member 1
-> - Member 2
-> - Member 3
+> - [Adam Candalija Naranjo](https://github.com/AdamCN10)
+> - [Nahuel Vázquez Guglielmetti](https://github.com/najuvgz)
+> - [Karen Paiva Leon](https://github.com/infokaren20)
 
 **Academy:** 
 > - [4Geeks Academy](https://4geeksacademy.com/us/index) 
@@ -30,10 +30,11 @@ The goal of this project is to develop a complete end-to-end Machine Learning so
 
 ## 🚀 Project Overview
 
-*[This section will be updated as we define our specific project scope and objectives]*
+In this project, we aim to develop a **Sentimental Analysis Model** that can automatically detect emotion behind text messages or social media posts.
 
 ### Problem Statement
-*To be defined - we will identify a real-world problem that can be solved using Machine Learning techniques*
+
+Social media platforms generate massive amounts of text data daily, containing valuable information about people's opinions and emotions. However, manually analyzing this data to extract meaningful insights is impractical due to its volume and diversity.
 
 ### Dataset
 *To be defined - we will acquire a dataset that meets the following minimum requirements:*
