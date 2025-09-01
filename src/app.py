@@ -6,9 +6,13 @@ from nltk import download
 from nltk.stem import WordNetLemmatizer
 from sklearn.feature_extraction.text import TfidfVectorizer
 
-with open('../models/random-forest.pkl', 'rb') as file:
-    model = pickle.load(file)
-
+import gdown
+file_id = '1uOJUzlUJTELtjOTmRCTZhaZpYB6c-hIW'
+model_file = "temp_model.pkl"
+url = f"https://drive.google.com/uc?id={file_id}"
+gdown.download(url, model_file, quiet=False)
+with open(model_file, 'rb') as file:
+            model = pickle.load(file)
 with open('../models/text-vectorizer.pkl', 'rb') as file:
     vectorizer = pickle.load(file)
 
@@ -20,8 +24,7 @@ def preprocess_text(text):
     return text.split()
 
 download("wordnet")
-lemmatizer = WordNetLemmatizer()
-
+lemmatizer = WordNetLemmatizer()S
 download("stopwords")
 stop_words = stopwords.words("english")
 
@@ -32,13 +35,9 @@ def lemmatize_text(words, lemmatizer=lemmatizer):
     return tokens
 
 #st.image("ruta/a/tu/logo.png", width=120)
-
 #Mejorar el diseño con columnas - ó mejor poner pestañas
-
 #3. Agregar colores y emojis
-st.title(":brain: Emotion Reader")
-
-
+st.title(":cerebro: Emotion Reader")
 
 # 7. Personalizar el tema
 # Puedes modificar el archivo .streamlit/config.toml
@@ -48,18 +47,15 @@ st.title(":brain: Emotion Reader")
 st.balloons()
 
 
-
 emotions = {"2" : 'joy :sonrojo:',
             "3" : 'sadness :lloros:',
             "0" : 'anger :enfado:',
             "1" : 'fear :grito:',
             "4" : 'surprise :asombrado:'}
 
-
 st.title("Emotion Reader")  #  ponemos titulo
-st.markdown(***Powered by :[Karen Paiva Leon](https://github.com/infokaren20), [Nahuel vazquez](https://github.com/najuvgz) y [Adam Candalija Naranjo](https://github.com/AdamCN10)***)
+st.markdown('Powered by :[Karen Paiva Leon](https://github.com/infokaren20), [Nahuel vazquez](https://github.com/najuvgz) y [Adam Candalija Naranjo](https://github.com/AdamCN10)')
 st.divider()
-
 
 val1 = st.text_area("write here your text. you can try with: I am sad ") # cargamos las variables - texto
 if st.button("Predict Emotion from text"): # predecimos la emocion del texto
@@ -92,4 +88,5 @@ if st.button("Predict Emotion from csv"):
             st.error("The uploaded CSV must contain a 'text' column")
 if st.DownloadButton("Download ", data=""({'text': ['I am very happy today', 'I am very sad today', 'I am very angry today', 'I am very scared today', 'I am very surprised today']}), file_name='sample.csv', mime='text/csv'):
     st.write("Sample file downloaded")
+
 '''
