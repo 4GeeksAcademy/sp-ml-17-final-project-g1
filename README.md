@@ -116,13 +116,16 @@ ml-project-repo/
 ```
 
 ## 🛠️ Technologies Used
+-Python 3.13.5
 
-*[To be updated as we select our tech stack]*
+-Jupyter notebook
 
-## 📊 Results
+-Libraries: Pandas, Numpy, Scikit-learn(RandomForest), Mathplotlib, Seaborn, ReGex, Huggingface(roBERTa), Transformers, Praw, nltk, Pickle
 
-*[To be updated with our model performance and insights]*
+-Streamlit
+
+-Github
 
 ## 🌐 Live Demo
+We don't have a live demo. You can clon this repository and launch it yourself in local using 'streamlit run .\src\local_RoBERTa.py' or 'streamlit run .\src\local_forest.py'
 
-*[Link to be added when the web application is deployed]*
