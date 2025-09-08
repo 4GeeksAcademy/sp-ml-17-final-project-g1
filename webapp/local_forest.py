@@ -8,12 +8,12 @@ from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 from sklearn.feature_extraction.text import TfidfVectorizer
 
-model_file = "C:/Users/adamc/Documents/GitHub/sp-ml-17-final-project-g1/models/random-forest.pkl"
+model_file = "../models/random-forest.pkl"
 with open(model_file, 'rb') as file:
             model = pickle.load(file)
 
         
-with open('C:/Users/adamc/Documents/GitHub/sp-ml-17-final-project-g1/models/text-vectorizer.pkl', 'rb') as file:
+with open('../models/text-vectorizer.pkl', 'rb') as file:
     vectorizer = pickle.load(file)
 
 def preprocess_text(text):
@@ -56,7 +56,7 @@ image_emotion = {2 : 'joy',
 st.markdown('Powered by :[Karen Paiva Leon](https://github.com/infokaren20), [Nahuel vazquez](https://github.com/najuvgz) y [Adam Candalija Naranjo](https://github.com/AdamCN10)')
 st.divider()
 st.text('This model predicts emotions from text and csv with only a text column.')
-st.image('C:/Users/adamc/Documents/Github/sp-ml-17-final-project-g1/images/emotion-wheel.png')
+st.image('../docs/asets/emotion-wheel.png')
 st.text('This model only can preditct the following emotions: Joy, Sadness, Fear, Anger and Surprise.')
 
 val1 = st.text_area("write here your text. you can try with: I am sad ") 
@@ -71,7 +71,7 @@ if st.button("Predict Emotion from text"):
         val1 = vectorizer.transform(val1).toarray()
         pred = model.predict(val1)
         st.success(f'The emotion is: {emotions[pred[0]]}')
-        st.image(f'C:/Users/adamc/Documents/Github/sp-ml-17-final-project-g1/images/{image_emotion[pred[0]]}.webp')
+        st.image(f'../docs/asets/{image_emotion[pred[0]]}.webp')
     else:
         st.error("Please write a text")
 

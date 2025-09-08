@@ -10,7 +10,7 @@ For this project, we combined several datasets containing text labeled with diff
 
 ### Emotion Normalization
 - Datasets that originally contained multiple overlapping emotions were **mapped into one of the five target categories** using the **Plutchik Wheel of Emotions** as a reference.
- ![Plutchik Wheel of Emotions](..\docs\assets\plutchik_wheel.png) 
+ ![Plutchik Wheel of Emotions](docs/assets/plutchik_wheel.png) 
 - The branches of *Trust* and *Anticipation* were not included due to insufficient data in our sources
 - Labels that did not fit into our five chosen categories (e.g., *boredom*, *relief*, *neutral*) were **discarded** to maintain consistency.  
 
