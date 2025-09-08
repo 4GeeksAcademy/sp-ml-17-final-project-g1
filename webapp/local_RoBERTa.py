@@ -3,8 +3,8 @@ import pandas as pd
 import transformers
 from transformers import RobertaForSequenceClassification, RobertaTokenizer, pipeline
 
-model = RobertaForSequenceClassification.from_pretrained("C:/Users/adamc/Documents/Github/sp-ml-17-final-project-g1/models/RoBERTa")
-tokenizer = RobertaTokenizer.from_pretrained("C:/Users/adamc/Documents/Github/sp-ml-17-final-project-g1/models/RoBERTa")
+model = RobertaForSequenceClassification.from_pretrained("../models/RoBERTa")
+tokenizer = RobertaTokenizer.from_pretrained("../models/RoBERTa")
 emotion_classifier = pipeline("text-classification", 
                               model=model, 
                               tokenizer=tokenizer, 
@@ -41,7 +41,7 @@ image_emotion = {'LABEL_2' : 'joy',
 st.markdown('Powered by :[Karen Paiva Leon](https://github.com/infokaren20), [Nahuel vazquez](https://github.com/najuvgz) y [Adam Candalija Naranjo](https://github.com/AdamCN10)')
 st.divider()
 st.text('This model predicts emotions from text and csv with only a text column.')
-st.image('C:/Users/adamc/Documents/Github/sp-ml-17-final-project-g1/images/emotion-wheel.png')
+st.image('../docs/asets/emotion-wheel.png')
 st.text('This model only can preditct the following emotions: Joy, Sadness, Fear, Anger and Surprise.')
 
 slider = st.slider("how many precission do you want in your emotion prediction? in %", 50, 100, 85)
@@ -50,7 +50,7 @@ val1 = st.text_area("write here your text. you can try with: I am sad ")
 if st.button("Predict Emotion from text"):
     if val1.strip():
         st.success(f'The emotion is: {emotions[emotion_categorizer(val1, slider)]}')
-        st.image(f'C:/Users/adamc/Documents/Github/sp-ml-17-final-project-g1/images/{image_emotion[emotion_categorizer(val1, slider)]}.webp')
+        st.image(f'../docs/asets/{image_emotion[emotion_categorizer(val1, slider)]}.webp')
     else:
         st.error("Please write a text")
 

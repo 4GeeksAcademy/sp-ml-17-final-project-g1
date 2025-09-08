@@ -1,0 +1,1 @@
+Here you can find all the images used in our deploys with streamlit and also emotion wheel (plutchik_wheel.png) that inspired in how to categorize the emotions.
