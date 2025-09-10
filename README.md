@@ -9,9 +9,9 @@ We will have to find a suitable dataset to work with, process it, train a model 
 ## 👥  Credits
 
 **Team Members:**
-> - Member 1
-> - Member 2
-> - Member 3
+> - [Adam Candalija Naranjo](https://github.com/AdamCN10)
+> - [Nahuel Vázquez Guglielmetti](https://github.com/najuvgz)
+> - [Karen Paiva Leon](https://github.com/infokaren20)
 
 **Academy:** 
 > - [4Geeks Academy](https://4geeksacademy.com/us/index) 
@@ -30,21 +30,30 @@ The goal of this project is to develop a complete end-to-end Machine Learning so
 
 ## 🚀 Project Overview
 
-*[This section will be updated as we define our specific project scope and objectives]*
+In this project, we aim to develop a **Sentimental Analysis Model** that can automatically detect emotion behind text messages or social media posts.
 
 ### Problem Statement
-*To be defined - we will identify a real-world problem that can be solved using Machine Learning techniques*
+
+Social media platforms generate massive amounts of text data every day, containing valuable information about people's opinions and emotions. However, manually analyzing this data to extract meaningful insights is impractical due to its volume and diversity. Our goal is to automate this process by applying the knowledge we have gained throughout the bootcamp.
 
 ### Dataset
-*To be defined - we will acquire a dataset that meets the following minimum requirements:*
-- 60,000+ instances (rows)
-- 20+ predictor variables (including at least 1 categorical variable)
+We constructed a custom dataset by merging multiple publicly available emotion-labeled text corpora.
+All labels were standardized into five target emotions: Sad, Fear, Anger, Joy, and Surprise, following the Plutchik Wheel of Emotions.
+Categories with insufficient data (e.g., Trust, Anticipation) and irrelevant labels (e.g., Neutral, Relief) were discarded.
+The final dataset ensures consistency across sources and provides a solid foundation for training and evaluation.
+
+- 500,000+ entries
+- 1 predictor variable
 
 ### Methodology
-*To be defined - we will document our chosen approach and algorithms*
+Our approach was based on fine-tuning a pre-trained RoBERTa model for multi-class emotion classification.
+The training was carried out on our standardized dataset, ensuring robust performance across five target emotions (Sad, Fear, Anger, Joy, Surprise).
+After model optimization and evaluation, we deployed the solution as an interactive Streamlit web application to make predictions accessible and user-friendly.
 
 ### Results
-*To be updated with our findings and model performance*
+The fine-tuned RoBERTa model achieved an overall accuracy of ~90% on the test set, demonstrating strong performance in multi-class emotion classification.
+Performance was consistent across the five target emotions (Sad, Fear, Anger, Joy, Surprise), with balanced precision and recall.
+Deployment through Streamlit allows real-time predictions, confirming the model’s effectiveness in practical applications.
 
 ## 📝 Project Phases
 
@@ -107,13 +116,16 @@ ml-project-repo/
 ```
 
 ## 🛠️ Technologies Used
+-Python 3.13.5
 
-*[To be updated as we select our tech stack]*
+-Jupyter notebook
 
-## 📊 Results
+-Libraries: Pandas, Numpy, Scikit-learn(RandomForest), Mathplotlib, Seaborn, ReGex, Huggingface(roBERTa), Transformers, Praw, nltk, Pickle
 
-*[To be updated with our model performance and insights]*
+-Streamlit
+
+-Github
 
 ## 🌐 Live Demo
+We don't have a live demo. You can clon this repository and launch it yourself in local using 'streamlit run .\src\local_RoBERTa.py' or 'streamlit run .\src\local_forest.py'
 
-*[Link to be added when the web application is deployed]*
